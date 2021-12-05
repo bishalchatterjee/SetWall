@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/gradienteffect"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_margin="10dp"
+        android:background="@drawable/search_bar"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:weightSum="4"
+        android:id="@+id/idLLSearch">
+
+     <EditText
+         android:layout_width="0dp"
+         android:layout_height="wrap_content"
+         android:layout_weight="3.5"
+         android:backgroundTint="@android:color/transparent"
+         android:hint="Search Wallpapers"
+         android:padding="8dp"
+         android:singleLine="true"
+         android:textColor="@color/black"
+         android:textSize="15sp"
+         android:id="@+id/idEdtSearch" />
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.5"
+            android:layout_gravity="center"
+            android:id="@+id/idIVSearch"
+            android:src="@drawable/search"
+            android:padding="4dp"/>
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/idRVCategory"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="3dp"
+        android:layout_below="@+id/idLLSearch"
+        android:orientation="horizontal"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/idRVCategory"
+            android:id="@+id/idRVWallpapers"
+            android:layout_marginTop="5dp"/>
+         <ProgressBar
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:layout_centerInParent="true"
+             android:id="@+id/idPBLoading"
+             android:visibility="gone"/>
+
+
+</RelativeLayout>
